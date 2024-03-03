@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 
 function App() {
+
   // State to store the fetched data
   const [tubeStatus, setTubeStatus] = useState([]);
 
@@ -27,7 +28,7 @@ function App() {
         setTubeStatus(data);
       })
       .catch(error => {
-        console.error('There was a problem fetching data:', error);
+        console.error('There was a problem fetching data');
       });
   }, []); // Empty dependency array ensures that this effect runs only once on component mount
 
@@ -52,6 +53,34 @@ function App() {
       })
       .catch(err => console.error(err));
     }, [])
+
+    const [airQuality, setAirQuality] = useState([]);
+    
+    useEffect(() => {
+      fetch('https://api.tfl.gov.uk/AirQuality/', {
+        method: 'GET',
+        // Request headers
+        headers: {
+          'Cache-Control': 'no-cache',
+        },
+      })
+      .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json(); // Parse the JSON response
+      })
+      .then(data => {
+        console.log("Air quality data:", data); // Log the fetched data
+        setAirQuality(data); // Set the parsed JSON data to the state
+      })
+      .catch(err => console.error(err));
+    }, []);
+
+  
+  // Access the forecastSummary of the first forecast if available
+  const firstForecastSummary = airQuality.currentForecast?.[0]?.forecastSummary || '';
+
 
   return (
     <div className="App container">
@@ -92,7 +121,7 @@ function App() {
             {status.name === 'Waterloo & City' && (
               <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/W%26c_line_roundel.svg" alt="Waterloo and City Logo" className="img-fluid mr-2" style={{ maxWidth: '10%'}} />
             )}
-            {status.lineStatuses[0].statusSeverityDescription}
+            <div>{status.lineStatuses[0].statusSeverityDescription} </div>
           </li>
         ))}
       </ul>
@@ -103,6 +132,26 @@ function App() {
           <li key={index} className="list-group-item">{disruption.description}</li>
         ))}
       </ul>
+
+      <h2 className="mt-5">Air Quality</h2>
+      <ul className="list-group mt-3">{airQuality.currentForecast?.map((forecast, index) => (
+    <li key={index} className="list-group-item">
+      {forecast.forecastType === "Current" && (
+        <>
+          <strong>Today's Forecast:</strong>
+          <p>{forecast.forecastSummary}</p>
+        </>
+      )}
+      {forecast.forecastType === "Future" && (
+        <>
+          <strong>Tomorrows Forecast:</strong> 
+          <p>{forecast.forecastSummary}</p>
+        </>
+      )}
+    </li>
+  ))}
+</ul>
+
 
 
     </div>
