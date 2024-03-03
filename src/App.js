@@ -79,7 +79,7 @@ function App() {
 
   
   // Access the forecastSummary of the first forecast if available
-  const firstForecastSummary = airQuality.currentForecast?.[0]?.forecastSummary || '';
+  // const firstForecastSummary = airQuality.currentForecast?.[0]?.forecastSummary || '';
 
 
   return (
