@@ -4,8 +4,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 
 
-function App() {
 
+
+function App() {
   // State to store the fetched data
   const [tubeStatus, setTubeStatus] = useState([]);
 
@@ -129,7 +130,8 @@ function App() {
       <h2 className="mt-5">Tube Disruption</h2>
       <ul className="list-group mt-3">
         {tubeDisruption.map((disruption, index) => (
-          <li key={index} className="list-group-item">{disruption.description}</li>
+          <li key={index} className="list-group-item">{disruption.description}
+          </li>
         ))}
       </ul>
 
@@ -138,17 +140,22 @@ function App() {
     <li key={index} className="list-group-item">
       {forecast.forecastType === "Current" && (
         <>
-          <strong>Today's Forecast:</strong>
+          <strong>Todays air quality:</strong>
           <p>{forecast.forecastSummary}</p>
         </>
       )}
       {forecast.forecastType === "Future" && (
         <>
-          <strong>Tomorrows Forecast:</strong> 
+          <strong>Tomorrows air quality:</strong> 
           <p>{forecast.forecastSummary}</p>
         </>
       )}
+
+      {forecast.forecastBand === "Low" && (
+            <img src="http://www.clker.com/cliparts/L/u/0/1/d/C/green-square-md.png" alt= "Green square" className="img-fluid mr-2" style={{ maxWidth: '30px'}} />
+          )}
     </li>
+
   ))}
 </ul>
 
