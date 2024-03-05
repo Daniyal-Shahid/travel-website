@@ -13,6 +13,72 @@
   }
 }
 
+.container {
+  justify-content: center; /* Center horizontally */
+  align-items: stretch; /* Center vertically */
+  place-items: center;
+  column-fill: auto;
+}
+
+/* Panel Container */
+.panel-container {
+  margin: 20px;
+}
+
+/* Panel */
+.panel {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #aebbff;
+  padding: 20px;
+}
+
+/* Panel Header */
+.panel-header {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* List */
+.list-group {
+  padding-left: 0;
+}
+
+/* List Item */
+.list-group-item {
+  border: none;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+/* List Item Icon */
+.list-item-icon {
+  margin-right: 10px;
+}
+
+/* Status Description */
+.status-description {
+  margin-left: auto;
+}
+
+/* Green Square */
+.green-square {
+  width: 20px;
+  height: 20px;
+  background-color: #00ff00;
+  border-radius: 3px;
+}
+
+/* Adjustments for specific icons */
+.img-fluid {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -28,6 +94,100 @@
   color: #61dafb;
 }
 
+/* CustomProvider Container */
+.CustomProvider {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  padding: 20px;
+}
+
+/* Panel */
+.Panel {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Panel Header */
+.Panel-header {
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #007bff;
+  color: #ffffff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* Panel Body */
+.Panel-body {
+  padding: 20px;
+}
+
+/* List */
+.list-group {
+  padding-left: 0;
+}
+
+/* List Item */
+.list-group-item {
+  border: none;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* List Item Description */
+.list-item-description {
+  margin-left: 15px;
+}
+
+/* Form Container */
+.Form-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/* Form Elements */
+.Form-element {
+  margin-bottom: 15px;
+}
+
+/* Button */
+.Button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Button Hover Effect */
+.Button:hover {
+  background-color: #0056b3;
+}
+
+/* Input Field */
+.Input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Input Field Focus */
+.Input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,3 +196,4 @@
     transform: rotate(360deg);
   }
 }
+
