@@ -59,9 +59,9 @@ function Home() {
       case "Minor Delays":
         return "https://upload.wikimedia.org/wikipedia/commons/9/91/Location_dot_orange.svg";
       case "Severe Delays":
-          return "https://upload.wikimedia.org/wikipedia/commons/0/02/Red_Circle%28small%29.svg";
+        return "https://upload.wikimedia.org/wikipedia/commons/0/02/Red_Circle%28small%29.svg";
       case "Part Suspended":
-          return "https://upload.wikimedia.org/wikipedia/commons/f/f1/Triangle_warning_sign_%28red_and_yellow%29.svg"
+        return "https://upload.wikimedia.org/wikipedia/commons/f/f1/Triangle_warning_sign_%28red_and_yellow%29.svg";
       // Add more cases as needed for other status types
       default:
         return "https://upload.wikimedia.org/wikipedia/commons/4/48/Light_Blue_Circle.svg"; // Default to empty string if no image URL is available
@@ -96,13 +96,15 @@ function Home() {
         return ""; // Default to empty string if no logo URL is available
     }
   };
-  
 
   return (
     <div>
       <h1 className="text-lg font-sans font-medium">TFL Tube Status</h1>
-      {tubeStatus.map((status, index) => ( 
-        <div key={index} className="grid grid-cols-4 gap-4 mx-auto px-4 shrink justify-evenly items-center place-content-stretch mt-3 border shadow">
+      {tubeStatus.map((status, index) => (
+        <div
+          key={index}
+          className="grid grid-cols-4 gap-4 mx-auto px-4 shrink justify-evenly items-center place-content-stretch mt-3 border shadow"
+        >
           <img
             src={status.logoUrl}
             alt={`${status.name} Line Logo`}
@@ -111,12 +113,19 @@ function Home() {
           />
           <div>
             {status.status !== "Good Service" && (
-          <p class="decoration-red-950 text-red-600 font-sans font-medium align-middle">{status.status}</p>
-          )}
-            {tubeDisruption.map((disruption, dIndex) => {
-              if (!(status.status === "Good Service")) {
+              <p class="decoration-red-950 text-red-600 font-sans font-medium align-middle">
+                {status.status}
+              </p>
+            )}
+            {tubeDisruption.map((disruption, Index) => {
+              if (
+                disruption.name === status.name &&
+                !(status.status === "Good Service")
+              ) {
                 return (
-                  <p key={dIndex} class="font-sans font-normal">{disruption.description}</p>
+                  <p key={Index} class="font-sans font-normal">
+                    {disruption.description}
+                  </p>
                 );
               }
               return null;
