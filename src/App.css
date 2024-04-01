@@ -1,199 +1,85 @@
+/* App Container */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.container {
-  justify-content: center; /* Center horizontally */
-  align-items: stretch; /* Center vertically */
-  place-items: center;
-  column-fill: auto;
-}
-
-/* Panel Container */
-.panel-container {
-  margin: 20px;
-}
-
-/* Panel */
-.panel {
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #aebbff;
-  padding: 20px;
-}
-
-/* Panel Header */
-.panel-header {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-/* List */
-.list-group {
-  padding-left: 0;
-}
-
-/* List Item */
-.list-group-item {
-  border: none;
-  padding: 10px 0;
-  display: flex;
-  align-items: center;
-}
-
-/* List Item Icon */
-.list-item-icon {
-  margin-right: 10px;
-}
-
-/* Status Description */
-.status-description {
-  margin-left: auto;
-}
-
-/* Green Square */
-.green-square {
-  width: 20px;
-  height: 20px;
-  background-color: #00ff00;
-  border-radius: 3px;
-}
-
-/* Adjustments for specific icons */
-.img-fluid {
-  max-width: 40px;
-  max-height: 40px;
-}
-
-
-
-.App-header {
-  background-color: #282c34;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-/* CustomProvider Container */
-.CustomProvider {
-  font-family: Arial, sans-serif;
-  background-color: #f0f2f5;
   padding: 20px;
 }
 
-/* Panel */
-.Panel {
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
+/* Page Header */
+.page-header {
+  font-size: 24px;
+  font-weight: bold;
   margin-bottom: 20px;
 }
 
-/* Panel Header */
-.Panel-header {
-  padding: 15px 20px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  background-color: #007bff;
-  color: #ffffff;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+/* Tube Status Container */
+.tube-status-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-/* Panel Body */
-.Panel-body {
-  padding: 20px;
-}
-
-/* List */
-.list-group {
-  padding-left: 0;
-}
-
-/* List Item */
-.list-group-item {
-  border: none;
-  padding: 10px 0;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #dee2e6;
-}
-
-/* List Item Description */
-.list-item-description {
-  margin-left: 15px;
-}
-
-/* Form Container */
-.Form-container {
+/* Tube Status Card */
+.tube-status-card {
   background-color: #ffffff;
-  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
+  padding: 20px;
 }
 
-/* Form Elements */
-.Form-element {
-  margin-bottom: 15px;
+/* Tube Line Name */
+.tube-line-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-/* Button */
-.Button {
-  background-color: #007bff;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
+/* Tube Line Status */
+.tube-line-status {
+  font-size: 16px;
+  color: #333333;
 }
 
-/* Button Hover Effect */
-.Button:hover {
-  background-color: #0056b3;
+/* Tube Line Status Indicator */
+.tube-line-status-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 5px;
 }
 
-/* Input Field */
-.Input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  box-sizing: border-box;
+/* Tube Line Status: Good */
+.tube-line-status-good {
+  background-color: #00ff00;
 }
 
-/* Input Field Focus */
-.Input:focus {
-  border-color: #007bff;
-  outline: none;
+/* Tube Line Status: Minor Delays */
+.tube-line-status-minor {
+  background-color: #ffff00;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Tube Line Status: Severe Delays */
+.tube-line-status-severe {
+  background-color: #ff0000;
 }
 
+/* Tube Line Status: Part Closure */
+.tube-line-status-part-closure {
+  background-color: #ff9900;
+}
+
+/* Tube Line Status: Planned Closure */
+.tube-line-status-planned-closure {
+  background-color: #9900cc;
+}
+
+/* Tube Line Status: Service Closed */
+.tube-line-status-closed {
+  background-color: #999999;
+}
